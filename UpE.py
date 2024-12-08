@@ -134,3 +134,13 @@ if (program == "Banana Simulator"):
             file.close()
     else:
         print('Failed to download file')
+    url = 'https://github.com/Freakybob-Team-Games/Banana-Simulator/blob/main/F.json?raw=true'
+    response = requests.get(url)
+    file_Path = 'F.json'
+    if response.status_code == 200:
+        with open(file_Path, 'wb') as file:
+            file.write(response.content)
+            print('FreakiFest file downloaded')
+            file.close()
+    else:
+        print('Failed to download FreakiFest (Note: Banana Simulator requires this!)')
